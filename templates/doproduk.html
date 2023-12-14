@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Produk Admin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='diska.css')}}">
+  <!--aos-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- bs -->
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+
+ 
+  <style>
+    * {
+      transition: .3s;
+    }
+
+
+    body {
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      line-height: 28px;
+      color: #6a6a6a;
+      font-size: 14px;
+      background-color: #eff2f1;
+    }
+
+    a {
+      text-decoration: none;
+      -webkit-transition: 0.3s all ease;
+      -o-transition: 0.3s all ease;
+      transition: 0.3s all ease;
+      color: #2f2f2f;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #2f2f2f;
+      text-decoration: none;
+    }
+
+    a.more {
+      font-weight: 600;
+    }
+
+    .custom-navbar {
+      background: #3b5d50 !important;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .custom-navbar .navbar-brand {
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    .custom-navbar .navbar-brand>span {
+      opacity: 0.4;
+    }
+
+    .custom-navbar .navbar-toggler {
+      border-color: transparent;
+    }
+
+    .custom-navbar .navbar-toggler:active,
+    .custom-navbar .navbar-toggler:focus {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      outline: none;
+    }
+
+    @media (min-width: 992px) {
+      .custom-navbar .custom-navbar-nav li {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    }
+
+    .custom-navbar .custom-navbar-nav li a {
+      font-weight: 500;
+      color: #ffffff !important;
+      opacity: 0.5;
+      -webkit-transition: 0.3s all ease;
+      -o-transition: 0.3s all ease;
+      transition: 0.3s all ease;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .custom-navbar .custom-navbar-nav li a:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 8px;
+        right: 8px;
+        background: #f9bf29;
+        height: 5px;
+        opacity: 1;
+        visibility: visible;
+        width: 0;
+        -webkit-transition: 0.15s all ease-out;
+        -o-transition: 0.15s all ease-out;
+        transition: 0.15s all ease-out;
+      }
+    }
+
+    .custom-navbar .custom-navbar-nav li a:hover {
+      opacity: 1;
+    }
+
+    .custom-navbar .custom-navbar-nav li a:hover:before {
+      width: calc(100% - 16px);
+    }
+
+    .custom-navbar .custom-navbar-nav li.active a {
+      opacity: 1;
+    }
+
+    .custom-navbar .custom-navbar-nav li.active a:before {
+      width: calc(100% - 16px);
+    }
+
+    .custom-navbar .custom-navbar-cta {
+      margin-left: 0 !important;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+    }
+
+    @media (min-width: 768px) {
+      .custom-navbar .custom-navbar-cta {
+        margin-left: 40px !important;
+      }
+    }
+
+    .custom-navbar .custom-navbar-cta li {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    .custom-navbar .custom-navbar-cta li:first-child {
+      margin-right: 20px;
+    }
+
+    .before-footer-section {
+      padding: 7rem 0 12rem 0 !important;
+    }
+
+    .footer-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+
+    .footer-section .footer-logo-wrap .footer-logo {
+      font-size: 32px;
+      font-weight: 500;
+      text-decoration: none;
+      color: #3b5d50;
+    }
+    .gambar{
+      min-width: 200px;
+    }
+  
+    @media (max-width: 768px) {
+      .logo {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+      }
+
+      .logo img {
+        width: 100%;
+      }
+
+      nav ul li {
+        font-size: 70%;
+      }
+    }
+    
+    .atas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;    
+}
+.hasil table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+@keyframes bordertb{
+      0%,100%{
+        border-top:2px solid white;
+      border-bottom: 2px solid white;   
+      border-right:2px solid transparent;
+      border-left: 2px solid transparent;   
+      }
+      50%{
+        border-right:2px solid white;
+      border-left: 2px solid white; 
+      border-top:2px solid transparent;
+      border-bottom: 2px solid transparent;  
+      }
+    }
+    .gambarlogo{
+      width:50px !important;
+    }
+    .parentlogo{
+      animation: bordertb 2s infinite;
+    }
+    .navbar{
+      padding:10px 10px !important;
+    }
+       /**/
+       main {
+            background-image: url('{{url_for("static",filename="bgproduk.jpg")}}');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .isimain {
+            background: transparent;
+            box-sizing: border-box;
+            background:
+                linear-gradient(90deg, #cff7c500, #dadada) left 0% top 0/20% 100% no-repeat transparent;
+            animation: ct2 4s infinite linear;
+        }
+
+        @keyframes ct2 {
+            100% {
+                background-position: right 0% top 0;
+            }
+        }
+  </style>
+</head>
+
+<body class="d-flex flex-column">
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="PeduliHiv navigation bar">
+
+    <div class="container">
+      <div class="d-flex parentlogo p-1 justify-content-evenly align-items-center flex-row">
+        <div class="gambarlogo">
+          <img class="wi10" src="https://cdn-icons-png.flaticon.com/128/11042/11042278.png">
+        </div>
+        <a class="navbar-brand" href="{{url_for('dohome')}}">PeduliHiv<span>.</span></a>
+
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsPeduliHiv"
+        aria-controls="navbarsPeduliHiv" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsPeduliHiv">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li>
+            <a class="nav-link" href="{{url_for('dohome')}}">Home</a>
+          </li>
+          <li><a class="nav-link" href="{{url_for('doedukasi')}}">Edukasi</a></li>
+          <li class="nav-item active"><a class="nav-link" href="{{url_for('doproduk')}}">Produk</a></li>
+          <li><a class="nav-link" href="{{url_for('dokonsultasi')}}">Konsultasi</a></li>
+          <li data-aos="fade-down-right" class="nav-item active"><button style="border-radius: 10px; padding:5px 10px;" type="button" class="button btn-danger"
+            onclick="logout()">Logout</button></li>
+      </ul>
+
+      <ul data-aos="fade-down-right" class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+        <li><img src="{{url_for('static', filename='user.svg')}}"></li>
+        <li class="text-white">{{nickname}}</li>
+
+      </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="isimain wi10">
+       <form class="d-flex justify-content-center flex-column align-items-center ">
+    {% for isi in semua %}
+    <div class="atas p-3 ">
+        <!--1-->
+        <div class="isiatas border border-success d-flex align-items-center justify-content-center bgi text-success flex-column p-2 ">
+            <h1>VatCi</h1>
+            <div class="gambar  wi10  d-flex align-items-center justify-content-center">
+                <img class="wi9" src="{{url_for('static',filename='vit1.jpg')}}">
+            </div>
+            <p>stock: {{ isi.vit1 }}</p>
+            <div class="d-flex flex-row wi10 justify-content-evenly">
+                <input class="wi5" type="number" id="vit1" value="{{ isi.vit1 }}"
+                    oninput="if(this.value==='') this.value='{{ isi.vit1 }}'">
+                <p>pcs</p>
+            </div>
+        </div>
+        <!--2-->
+        <div class="isiatas border border-success d-flex align-items-center justify-content-center bgi text-success flex-column p-2 ">
+            <h1>VatA</h1>
+            <div class="gambar  wi10  d-flex align-items-center justify-content-center">
+                <img class="wi9" src="{{url_for('static',filename='vit2.jpg')}}">
+            </div>
+            
+            <p>stock: {{ isi.vit2 }}</p>
+            <div class="d-flex flex-row wi10 justify-content-evenly">
+                <input type="number" class="wi5" id="vit2" value="{{ isi.vit2 }}"
+                    oninput="if(this.value==='') this.value='{{ isi.vit2 }}'">
+                <p>pcs</p>
+            </div>
+        </div>
+        <!--3-->
+        <div class="isiatas d-flex border border-success align-items-center justify-content-center bgi text-success flex-column p-2 ">
+            <h1>VatBi</h1>
+            <div class="gambar  wi10  d-flex align-items-center justify-content-center">
+                <img class="wi9" src="{{url_for('static',filename='vit3.jpg')}}">
+            </div>
+           
+            <p>stock: {{ isi.vit3 }}</p>
+            <div class="d-flex flex-row wi10 justify-content-evenly">
+                <input type="number" class="wi5" id="vit3" value="{{ isi.vit3 }}"
+                    oninput="if(this.value==='') this.value='{{isi.vit3}}'">
+                <p>pcs</p>
+            </div>
+
+        </div>
+    </div>
+    <button type="button" onclick="updatestock()" class="btn btn-lg btn-outline-success">Update Stock</button>
+    
+    {% endfor %}
+  </form>
+
+  <div class="tampilpesanan mt-3 atas p-5">
+
+
+  </div>
+    </div>
+  </main>
+ 
+
+  
+  <!--isi-->
+ 
+  <footer class="footer-section">
+    <div class="container d-flex justify-content-center align-items-center flex-column">
+          <h1>PeduliHIV .</h1>
+          <p class="mb-0"> 
+            Copyright &copy; <script>document.write(new Date().getFullYear());</script>
+          </p>
+          <p class="mb-0">by Diska Romandoni.</p>
+        </div>
+  </footer>
+
+  <script>
+    AOS.init();
+    $(document).ready(function(){
+      pesanan();
+    });
+    function pesanan(){
+      $.ajax({
+        type:'GET',
+        url:'/tampilpesanan',
+        data:{},
+        success:function(response){
+          var isi=response['pelanggan'];
+          for(let i=0;i<isi.length;i++){
+            let nomor=isi[i]['nomor'];
+            let nama=isi[i]['nama'];
+            let nohp=isi[i]['nohp'];
+            let alamat=isi[i]['alamat'];
+            let pesan=isi[i]['pesan'];
+            let vit1=isi[i]['vit1'];
+            let vit2=isi[i]['vit2'];
+            let vit3=isi[i]['vit3'];
+            let total=isi[i]['total'];
+            let file=isi[i]['file'];
+            let status=isi[i]['status'];
+            let temp=``;
+            if(status==='belum terkirim'){
+              let temp=`  <div class="d-flex flex-column text-white bg-success justify-content-center align-items-center">
+        <div class="hasil m-5 mp1 mm2  d-flex flex-column justify-content-center align-items-center">
+          <table>
+          <tr><td>Nama</td><td>:</td><td>${nama}</td></tr>
+          <tr><td>No Hp</td><td>:</td><td>${nohp}</td></tr>
+          <tr><td>Alamat</td><td>:</td><td>${alamat}</td></tr>
+          <tr><td>Pesan</td><td>:</td><td>${pesan}</td></tr>
+          <tr><td>Membeli Produk</td><td>:</td><td> 
+          vit1/${vit1}pcs, vit2/${vit2}pcs, vit3/${vit3}pcs </td></tr>
+          <tr><td>Total</td><td>:</td><td>${total} </td></tr>
+          <tr><td>Status</td><td>:</td><td>${status} </td></tr>
+          </table>
+          <div class="gambar mt-2  wi10  d-flex align-items-center justify-content-center">
+            <img class="wi9" src="../${file}" >
+          </div>
+        </div>
+        
+        <button type="button" class=" btn rbn-sm btn-outline-light mb-3 wi5" onclick="kirim(${nomor})">Konfirmasi Pengiriman</button>
+
+      </div>
+      `;
+      $(".tampilpesanan").prepend(temp);
+            }else if(status==='terkirim'){
+              let temp=`  <div class="d-flex flex-column text-white bg-secondary justify-content-center align-items-center">
+        <div class="hasil m-5 mp1 mm2  d-flex flex-column justify-content-center align-items-center">
+          <table>
+          <tr><td>Nama</td><td>:</td><td>${nama}</td></tr>
+          <tr><td>No Hp</td><td>:</td><td>${nohp}</td></tr>
+          <tr><td>Alamat</td><td>:</td><td>${alamat}</td></tr>
+          <tr><td>Pesan</td><td>:</td><td>${pesan}</td></tr>
+          <tr><td>Membeli Produk</td><td>:</td><td> 
+          vit1/${vit1}pcs, vit2/${vit2}pcs, vit3/${vit3}pcs </td></tr>
+          <tr><td>Total</td><td>:</td><td>${total} </td></tr>
+          <tr><td>Status</td><td>:</td><td>${status} </td></tr>
+          </table>
+          <div class="gambar mt-2  wi10  d-flex align-items-center justify-content-center">
+            <img class="wi9" src="../${file}" >
+          </div>
+        </div>
+        
+        <button type="button" class=" btn btn-sm btn-danger mb-3 wi5" onclick="hapus(${nomor})">Hapus Pesanan</button>
+
+      </div>
+      `;
+      $(".tampilpesanan").prepend(temp);
+            }
+        
+
+          }
+        }
+      })
+    }
+    function kirim(nomor){
+      event.preventDefault();
+      $.ajax({
+        type:'POST',
+        url:'/kirim',
+        data:{nomor:nomor},
+        success:function(response){
+          alert(response['message']);
+          window.location.reload();
+        }
+      })
+    }
+    function hapus(nomor){
+      event.preventDefault();
+      $.ajax({
+        type:'POST',
+        url:'/hapus',
+        data:{nomor2:nomor},
+        success:function(response){
+          alert(response['message']);
+          window.location.reload();
+        }
+      })
+    }
+    function logout() {
+      $.removeCookie('mytoken');
+      alert('success remove cookie')
+      window.location.href = '/'
+
+    }
+      function updatestock(){
+        event.preventDefault();
+        var vit1 = $("#vit1").val();
+            var vit2 = $("#vit2").val();
+            var vit3 = $("#vit3").val();
+        $.ajax({
+          type:'POST',
+          url:'/updatestock',
+          data:{vit1:vit1,vit2:vit2,vit3:vit3},
+          success:function(response){
+            alert(response['message']);
+            window.location.reload();
+          }
+        })
+      }
+  </script>
+</body>
+
+</html>

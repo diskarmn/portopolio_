@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{url_for('static', filename='styleproduk.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='diska.css')}}">
+    <!--aos-->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- bs -->
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../static/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+
+    <style>
+        .isiatas {
+            animation: warna1 3s infinite;
+            border-radius: 10px;
+        }
+
+        .satu {
+            animation-delay: 0s;
+        }
+
+        .dua {
+            animation-delay: 1s;
+        }
+
+        .tiga {
+            animation-delay: 2s;
+        }
+
+        @keyframes warna1 {
+
+            0%,
+            100% {
+                background-color: #273a33;
+            }
+
+            50% {
+                background-color: #448069;
+            }
+        }
+
+        @keyframes bordertb {
+
+            0%,
+            100% {
+                border-top: 2px solid white;
+                border-bottom: 2px solid white;
+                border-right: 2px solid transparent;
+                border-left: 2px solid transparent;
+            }
+
+            50% {
+                border-right: 2px solid white;
+                border-left: 2px solid white;
+                border-top: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+            }
+        }
+
+        .gambarlogo {
+            width: 50px !important;
+        }
+
+        .parentlogo {
+            animation: bordertb 2s infinite;
+        }
+
+        .navbar {
+            padding: 10px 10px !important;
+        }
+
+        /**/
+        main {
+            background-image: url('{{url_for("static",filename="bgproduk.jpg")}}');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .isimain {
+            background: transparent;
+            box-sizing: border-box;
+            background:
+                linear-gradient(90deg, #cff7c500, #dadada) left 0% top 0/20% 100% no-repeat transparent;
+            animation: ct2 4s infinite linear;
+        }
+
+        @keyframes ct2 {
+            100% {
+                background-position: right 0% top 0;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+        arial-label="PeduliHiv navigation bar">
+
+        <div class="container">
+            <div class="d-flex parentlogo p-1 justify-content-evenly align-items-center flex-row">
+                <div class="gambarlogo">
+                    <img class="wi10" src="https://cdn-icons-png.flaticon.com/128/11042/11042278.png">
+                </div>
+                <a class="navbar-brand" href="{{url_for('home')}}">PeduliHiv<span>.</span></a>
+
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsPeduliHiv"
+                aria-controls="navbarsPeduliHiv" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsPeduliHiv">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li>
+                        <a class="nav-link" href="{{url_for('home')}}">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="{{url_for('pedukasi')}}">Edukasi</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="{{url_for('produk')}}">Produk</a></li>
+                    <li><a class="nav-link" href="{{url_for('konsultasi')}}">Konsultasi</a></li>
+                    <li data-aos="fade-down-right" class="nav-item active"><button style="border-radius: 10px; padding:5px 10px;" type="button" class="button btn-danger"
+                        onclick="logout()">Logout</button></li>
+                  </ul>
+          
+                  <ul data-aos="fade-down-right" class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                    <li><img src="{{url_for('static', filename='user.svg')}}"></li>
+                    <li class="text-white">{{nickname}}</li>
+          
+                  </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="wi10 isimain">
+            <h1 class="text-center">Forum Pembelian</h1>
+            <form class="wi10 d-flex flex-column align-items-center" method="POST" enctype="multipart/form-data">
+                {% for isi in semua %}
+                <div class="atas p-3">
+                    <!--1-->
+                    <div
+                        class="isiatas satu d-flex align-items-center justify-content-center bgi text-white flex-column p-2 ">
+                        <h1>VatCi</h1>
+                        <div class="gambar  wi10  d-flex align-items-center justify-content-center">
+                            <img class="wi9" src="{{url_for('static',filename='vit1.jpg')}}">
+                        </div>
+                        <a class="border border-white p-2 mt-2 text-white"
+                            style="text-decoration: none; border-radius: 3px;" href="{{url_for('detailproduk')}}">Detail
+                            Produk</a>
+                        <p>stock: {{ isi.vit1 }}</p>
+                        <p>Rp.30.000/pcs</p>
+                        <div class="d-flex flex-row wi10 justify-content-evenly">
+                            <input class="wi5" type="number" id="vit1" value="0"
+                                oninput="if(this.value==='') this.value='0'">
+                            <p>pcs</p>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div
+                        class="isiatas dua d-flex align-items-center justify-content-center bgi text-white flex-column p-2 ">
+                        <h1>VatA</h1>
+                        <div class="gambar  wi10  d-flex align-items-center justify-content-center">
+                            <img class="wi9" src="{{url_for('static',filename='vit2.jpg')}}">
+                        </div>
+                        <a class="border border-white p-2 mt-2 text-white"
+                            style="text-decoration: none; border-radius: 3px;" href="{{url_for('detailproduk')}}">Detail
+                            Produk</a>
+                        <p>stock: {{ isi.vit2 }}</p>
+                        <p>Rp.40.000/pcs</p>
+                        <div class="d-flex flex-row wi10 justify-content-evenly">
+                            <input type="number" class="wi5" id="vit2" value="0"
+                                oninput="if(this.value==='') this.value='0'">
+                            <p>pcs</p>
+                        </div>
+                    </div>
+                    <!--3-->
+                    <div
+                        class="isiatas tiga d-flex align-items-center justify-content-center bgi text-white flex-column p-2 ">
+                        <h1>VatBi</h1>
+                        <div class="gambar  wi10  d-flex align-items-center justify-content-center">
+                            <img class="wi9" src="{{url_for('static',filename='vit3.jpg')}}">
+                        </div>
+                        <a class="border border-white p-2 mt-2 text-white"
+                            style="text-decoration: none; border-radius: 3px; "
+                            href="{{url_for('detailproduk')}}">Detail
+                            Produk</a>
+                        <p>stock: {{ isi.vit3 }}</p>
+                        <p>Rp.50.000/pcs</p>
+                        <div class="d-flex flex-row wi10 justify-content-evenly">
+                            <input type="number" class="wi5" id="vit3" value="0"
+                                oninput="if(this.value==='') this.value='0'">
+                            <p>pcs</p>
+                        </div>
+
+                    </div>
+                </div>
+                <p class="text-dark">jumlahkan harga terlebih dahulu sebelum membayar</p>
+                <button type="button" onclick="jumlah()" class="btn btn-outline-success">Jumlahkan harga</button>
+                <h1 class="total">Total:</h1>
+                {% endfor %}
+                <div class="wi10 wi10  p-5 flex-column d-flex justify-content-center align-items-center">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama (wajib)</label>
+                        <input type="text" class="form-control" id="nama" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nohp" class="form-label">No Hp (wajib)</label>
+                        <input type="text" class="form-control" pattern="08[0-9]{9,11}" id="nohp" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">Alamat (wajib)</label>
+                        <input type="text" class="form-control" id="alamat" required>
+                    </div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="masukkan pesan (oposional)" id="pesan"
+                            style="height: 100px"></textarea>
+                        <label for="pesan">Pesan (oposional)</label>
+                    </div>
+                    <div class="mb-3 mt-3 qris">
+                        <img class="wi10" src="{{url_for('static', filename='qris.jpg')}}">
+                    </div>
+                    <p class="text-dark">upload bukti screenshot pembayaran (wajib)</p>
+                    <div class="input-group mb-3 wi9 custom-file">
+                        <input type="file" class="form-control" id="image" name="file_give" required>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="beli()">Beli</button>
+                    <h3 class="text-dark" id="infopesan">
+                    </h3>
+                </div>
+
+            </form>
+
+
+            <!---->
+            <div class="tampilhasil">
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container d-flex justify-content-center align-items-center flex-column">
+            <h1>PeduliHIV .</h1>
+            <p class="mb-0">
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script>
+            </p>
+            <p class="mb-0">by Diska Romandoni.</p>
+        </div>
+    </footer>
+    <script>
+        AOS.init();
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+        function logout() {
+            $.removeCookie('mytoken');
+            alert('success remove cookie')
+            window.location.href = '/';
+        }
+        function jumlah() {
+            event.preventDefault();
+            var vit1 = $("#vit1").val();
+            var vit2 = $("#vit2").val();
+            var vit3 = $("#vit3").val();
+            var total = vit1 * 30000 + vit2 * 40000 + vit3 * 5000;
+            $(".total").text('Total:Rp' + total);
+        }
+
+        function beli() {
+            event.preventDefault();
+            var form_data = new FormData();
+            var file = $("#image").prop('files')[0];
+            var nama = $("#nama").val();
+            var nohp = $("#nohp").val();
+            var alamat = $("#alamat").val();
+            var pesan = $("#pesan").val();
+            var vit1 = $("#vit1").val();
+            var vit2 = $("#vit2").val();
+            var vit3 = $("#vit3").val();
+            var total = vit1 * 30000 + vit2 * 40000 + vit3 * 5000;
+            form_data.append('file_give', file);
+            form_data.append('nama', nama);
+            form_data.append('nohp', nohp);
+            form_data.append('alamat', alamat);
+            form_data.append('pesan', pesan);
+            form_data.append('vit1', vit1);
+            form_data.append('vit2', vit2);
+            form_data.append('vit3', vit3);
+            form_data.append('total', total);
+            $.ajax({
+                type: 'POST',
+                url: '/beli',
+                data: form_data,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    alert(response['message']);
+                    let tampil = `
+
+                    <div class="hasil p-5 m-5 mp1 mm2 text-white d-flex flex-column justify-content-center align-items-center">
+                        <button type="button" class="btn btn-info mt-3" onclick="refresh()">Refresh halaman</button>
+
+                        <table>
+            <tr><td>Nama</td><td>: ${response.nama}</td></tr>
+            <tr><td>No Hp</td><td>: ${response.nohp}</td></tr>
+            <tr><td>Alamat</td><td>: ${response.alamat}</td></tr>
+            <tr><td>Pesan</td><td>: ${response.pesan}</td></tr>
+            <tr><td>Membeli Produk</td><td>: 
+                vit1/${response.vit1}pcs, vit2/${response.vit2}pcs, vit3/${response.vit3}pcs </td></tr>
+            <tr><td>Total Harga</td><td>: ${response.total} </td></tr>
+            </table>
+           
+
+            </div>`;
+                    $(".tampilhasil").append(tampil);
+                    $("#infopesan").text('info pesanan anda ada dibawah');
+                }
+            });
+        }
+        function refresh() {
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>

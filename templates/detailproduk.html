@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produk</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='diska.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+  .before-footer-section {
+    padding: 7rem 0 12rem 0 !important;
+  }
+
+  .footer-section {
+    padding: 80px 0;
+    background: #ffffff;
+  }
+
+  .footer-section .footer-logo-wrap .footer-logo {
+    font-size: 32px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #3b5d50;
+  }
+
+  * {
+    transition: .3s;
+  }
+
+  .kembaliwadahnya:hover {
+    transform: translateX(-20px);
+
+  }
+
+  .kembali {
+    width: 50px;
+    transform: rotate(-90deg);
+  }
+
+  .kiri {
+    width: 30%;
+    min-width: 200px;
+  }
+
+  .warna {
+    color: #0c794f;
+  }
+
+  .semua {
+    margin-bottom: 100px;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .kanan {
+    animation: warna1 3s infinite;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .satu {
+    animation-delay: 0s;
+  }
+
+  .dua {
+    animation-delay: 1s;
+  }
+
+  .tiga {
+    animation-delay: 2s;
+  }
+
+  @keyframes warna1 {
+
+    0%,
+    100% {
+      background-color: transparent;
+    }
+
+    50% {
+      background-color: rgba(255, 255, 255, 0.726);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .kiri {
+      min-width: 40%;
+    }
+
+    .produk {
+      width: 100% !important;
+    }
+
+    .kanan p {
+      font-size: 70%;
+    }
+  }
+  /**/
+  .semua{
+    background-image: url('{{url_for("static",filename="bgdetail.jpg")}}');
+      background-repeat: no-repeat;
+      background-position:  center center;
+      background-size: cover;
+  }
+  /**/
+.kembaliwadahnya{
+  animation:besar 1s infinite;
+}
+@keyframes besar{
+  0%,100%{transform: scale(1);}
+  50%{transform: scale(1.15);}
+}
+</style>
+
+<body>
+  <div class="semua p-2  d-flex justify-content-center align-items-center flex-column">
+    <div class="kembaliwadahnya">
+      <a class="navbar-brand kembali" href="{{url_for('produk')}}">
+        <img class="wi10" src="https://cdn-icons-png.flaticon.com/128/3148/3148312.png">
+      </a>
+    </div>
+
+    <div class="judul">
+      <h1 class="mt-4 mffz9 warna"><b>Produk</b></h1>
+    </div>
+    <hr style="height:3px; background-color: #3b5d50;" class="wi10">
+    <div class="produk p-1 d-flex justify-content-evenly flex-row align-items-center wi8"
+      style="align-self: flex-start;">
+      <kiri>
+        <img class="wi10" src="{{url_for('static',filename='vit1.jpg')}}">
+      </kiri>
+      <div data-aos="fade-up" class="kanan satu d-flex flex-column align-items-center">
+        <h1 style="color: rgb(179, 117, 4);">VatCi</h1>
+        <hr style="height:3px; background-color: rgb(179, 117, 4);" class="wi5">
+
+        <p class="text-dark"><b>Manfaat:</b> VatCi, atau Vitamin C, adalah nutrisi vital yang mendukung sistem kekebalan
+          tubuh,
+          membantu pembentukan kolagen untuk kesehatan kulit, mempercepat penyembuhan luka, dan melindungi sel-sel tubuh
+          dari kerusakan akibat radikal bebas. Vitamin C juga berperan penting dalam penyerapan zat besi dan membantu
+          menjaga kesehatan gigi dan gusi.</p>
+        <p class="text-dark"><b>Efek Samping:</b> Dosis yang berlebihan dari Vitamin C mungkin menyebabkan gangguan
+          pencernaan seperti sakit perut atau diare ringan. Beberapa individu mungkin mengalami alergi terhadap
+          suplemen Vitamin C dalam bentuk tertentu. Penting untuk memperhatikan dosis yang direkomendasikan dan
+          berkonsultasi dengan ahli kesehatan sebelum mengonsumsi dalam jumlah besar.</p>
+      </div>
+    </div>
+    <!---->
+    <div class="produk p-1 d-flex flex-row align-items-center wi8" style="align-self: flex-end;">
+
+      <div data-aos="fade-left" class="kanan dua d-flex flex-column align-items-center">
+        <h1 style="color:rgb(202, 2, 2)">VatA</h1>
+        <hr style="height:3px; background-color: rgb(202, 2, 2);" class="wi5">
+        <p class="text-dark"><b>Manfaat:</b> Vitamin A, atau VatA, sangat penting untuk kesehatan mata, mendukung
+          penglihatan
+          yang baik, dan menjaga integritas kulit serta membran mukosa. Selain itu, Vitamin A juga berperan dalam
+          pertumbuhan sel, menjaga sistem kekebalan tubuh, dan berkontribusi pada kesehatan tulang dan gigi.</p>
+        <p class="text-dark"><b>Efek Samping:</b> Konsumsi berlebihan Vitamin A dapat mengakibatkan keracunan, yang
+          dapat
+          menyebabkan masalah kesehatan serius seperti gangguan hati, pusing, kulit kering, atau bahkan cacat lahir pada
+          ibu hamil. Oleh karena itu, perlu memperhatikan dosis harian yang disarankan dan mengonsultasikan penggunaan
+          suplemen dengan profesional medis.</p>
+      </div>
+      <kiri>
+        <img class="wi10" src="{{url_for('static',filename='vit2.jpg')}}">
+      </kiri>
+    </div>
+    <!---->
+    <div class="produk p-1 d-flex flex-row align-items-center wi8" style="align-self: flex-start;">
+      <kiri>
+        <img class="wi10" src="{{url_for('static',filename='vit3.jpg')}}">
+      </kiri>
+      <div data-aos="fade-right" class="kanan tiga d-flex flex-column align-items-center">
+        <h1 class="warna">VatBi</h1>
+        <hr style="height:3px; background-color: #0c794f;" class="wi5">
+        <p class="text-dark"><b>Manfaat:</b> VatBi, atau Vitamin B, adalah kumpulan nutrisi yang terdiri dari beberapa
+          jenis
+          seperti B1, B2, B3, B5, B6, B7, B9, dan B12, yang memiliki peran penting dalam metabolisme tubuh, produksi
+          energi, dan fungsi sistem saraf. Vitamin B juga membantu dalam pembentukan sel darah merah, menjaga
+          kesehatan kulit, dan mendukung sistem kekebalan tubuh.</p>
+        <p class="text-dark"><b>Efek Samping:</b> Efek samping yang jarang terjadi dari Vitamin B bisa mencakup gangguan
+          pencernaan ringan atau alergi. Namun, pada umumnya, vitamin B cenderung larut dalam air sehingga tubuh
+          mengeluarkannya jika dalam jumlah berlebihan. Namun, penting untuk tetap memperhatikan dosis yang
+          direkomendasikan untuk menghindari masalah yang mungkin timbul. Konsultasikan penggunaan suplemen dengan
+          ahli gizi atau dokter untuk dosis yang sesuai.</p>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <footer class="footer-section">
+    <div class="container d-flex justify-content-center align-items-center flex-column">
+      <h1>PeduliHIV .</h1>
+      <p class="mb-0">
+        Copyright &copy;
+        <script>document.write(new Date().getFullYear());</script>
+      </p>
+      <p class="mb-0">by Diska Romandoni.</p>
+    </div>
+  </footer>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
